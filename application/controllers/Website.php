@@ -54,7 +54,7 @@ class Website extends MY_Controller{
 
         $this->products_dir     = 'products';
             $this->products_file    = 'products';
-            $this->product_file     = 'product';
+            $this->product_file     = 'product_v2';
 
         $this->contacts_dir     = 'contacts'; //Not Used
             $this->contacts_file    = 'agents';   //Not Used

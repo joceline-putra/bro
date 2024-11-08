@@ -2,8 +2,8 @@
             <div class="container">
                 <nav aria-label="breadcrumb" class="breadcrumb-nav">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="demo4.html"><i class="icon-home"></i></a></li>
-                        <li class="breadcrumb-item"><a href="#">Products</a></li>
+                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>"><i class="icon-home"></i></a></li>
+                        <li class="breadcrumb-item"><a href="#"><?php echo $pages['sitelink']['categories']['title']; ?></a></li>
                     </ol>
                 </nav>
 
@@ -68,7 +68,7 @@
                         <!-- End .product-single-gallery -->
 
                         <div class="col-lg-7 col-md-6 product-single-details">
-                            <h1 class="product-title">Men Black Sports Shoes</h1>
+                            <h1 class="product-title"><?php echo $pages['sitelink']['categories']['title']; ?></h1>
 
                             <div class="product-nav">
                                 <div class="product-prev">
@@ -119,15 +119,23 @@
                             <hr class="short-divider">
 
                             <div class="price-box">
-                                <span class="product-price">$15.00 &ndash; </span>
-                                <span class="product-price"> $35.00</span>
+                                <span class="product-price">Rp. <?php echo number_format($pages['sitelink']['product']['price'],0);?></span>
+                                <span class="product-price">
+                                    <?php 
+                                        if(fmod($pages['sitelink']['product']['stock'], 1) > 0){
+                                            $ro = number_format($pages['sitelink']['product']['stock'],1);
+                                        }else{
+                                            $ro = number_format($pages['sitelink']['product']['stock'],0);
+                                        }
+                                        echo $ro;
+                                    ?> jam                                    
+                                </span>
                             </div>
                             <!-- End .price-box -->
 
                             <div class="product-desc">
                                 <p>
-                                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris
-                                    placerat eleifend leo.
+                                    <?php echo $pages['sitelink']['product']['content']; ?>
                                 </p>
                             </div>
                             <!-- End .product-desc -->
