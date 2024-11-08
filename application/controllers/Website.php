@@ -28,8 +28,8 @@ class Website extends MY_Controller{
         $this->load->helper(array('cookie', 'url'));         
 
         //Configuration
-        $this->layout           = 'mediax'; /* layouts/website/?  */
-        $this->asset            = 'mediax'; /* assets/? */
+        $this->layout           = 'porto'; /* layouts/website/?  */
+        $this->asset            = 'porto'; /* assets/? */
 
         //Routing
         $this->product_routing  = 'produk';
@@ -209,7 +209,7 @@ class Website extends MY_Controller{
 		$data['asset_dir']      = $this->nav['web']['asset']['dir'];		
 		$data['asset']          = $this->nav['web']['asset']['dir'].$this->nav['web']['asset']['folder'].'/';
         $data['link']           = $this->sitelink();
-
+        // var_dump($data['link']);die;
         // $this->load->view($this->nav['web']['index'],$data);
         
         $data['controller'] = $this->blog_routing;

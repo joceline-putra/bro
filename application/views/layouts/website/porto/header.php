@@ -1,8 +1,8 @@
         <header class="header">
-            <div class="header-top">
+            <div class="header-top" style="display:none;">
                 <div class="container">
                     <div class="header-left d-none d-sm-block">
-                        <p class="top-message text-uppercase"><?php echo $link['newsticker'];?></p>
+                        <p class="top-message text-uppercase"><?php echo $link['brand']; ?>, <?php echo $link['contact']['address']['office']; ?></p>
                     </div>
 
                     <div class="header-right header-dropdowns ml-0 ml-sm-auto w-sm-100">
@@ -10,12 +10,12 @@
                             <a href="#">Links</a>
                             <div class="header-menu">
                                 <ul>
-                                    <li><a href="<?php echo $link['account']; ?>">My Account</a></li>
-                                    <li><a href="<?php echo $link['about']; ?>">About Us</a></li>
+                                    <li><a href="<?php echo $link['about']; ?>">Tentang Kami</a></li>
                                     <li><a href="<?php echo $link['articles']; ?>">Blog</a></li>
-                                    <li><a href="<?php echo $link['wishlist']; ?>">My Wishlist</a></li>
-                                    <li><a href="<?php echo $link['cart']; ?>">Cart</a></li>
-                                    <li><a href="<?php echo $link['signin']; ?>" class="login-link">Log In</a></li>
+                                    <li><a href="<?php echo $link['wishlist']; ?>">Wishlist</a></li>
+                                    <li><a href="<?php echo $link['cart']; ?>">Keranjang</a></li>
+                                    <li><a href="<?php echo $link['login']; ?>" class="login-link">Masuk</a></li>
+                                    <li><a href="<?php echo $link['account']; ?>">Akun Saya</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -222,7 +222,7 @@
                                 <a href="<?php echo site_url(); ?>">Home</a>
                             </li>
                             <li>
-                                <a href="<?php echo $link['products'];?>">Prroducts</a>
+                                <a href="<?php echo $link['routing']['product'];?>">Products</a>
                                 <div class="megamenu megamenu-fixed-width megamenu-3cols">
                                     <div class="row">
                                         <div class="col-lg-4">
@@ -234,6 +234,10 @@
                                                         echo "<li><a href='".site_url().'/'.$link['routing']['product'].'/'.$v['category_url']."'>".$v['category_name']."</a></li>";
                                                     }
                                                 }
+                                                foreach($link['products'] as $a => $v){ ?>
+                                                    <li><a href="<?php echo base_url().$link['routing']['product'].'/'.$v['category_url'].'/'.$v['product_url'];?>"><?php echo $v['product_name'];?></a></li>
+                                                    <?php 
+                                                } 
                                                 ?>                                                
                                             </ul>
                                         </div>
@@ -282,7 +286,7 @@
                                     </li> -->
                                 </ul>
                             </li>
-                            <li><a href="<?php echo $link['contact_us'];?>">Contact Us</a></li>
+                            <li><a href="<?php echo $link['about'];?>">Tentang Kami</a></li>
                             <!-- <li class="float-right"><a href="#" rel="noopener" class="pl-5" target="_blank">Buy Porto!</a></li> -->
                             <!-- <li class="float-right"><a href="#" class="pl-5">Special Offer!</a></li> -->
                         </ul>

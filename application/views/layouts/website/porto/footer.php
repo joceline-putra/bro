@@ -34,10 +34,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <!-- End .widget -->
                         </div>
-                        <!-- End .col-lg-3 -->
-
                         <div class="col-lg-3 col-sm-6">
                             <div class="widget">
                                 <h4 class="widget-title">Layanan Pelanggan</h4>
@@ -49,13 +46,17 @@
                                     <!-- <li><a href="<?php #echo $link['history'];?>">Orders History</a></li> -->
                                     <?php 
                                     if(!empty($link)){
-                                    foreach($link['menu'] as $v){
-                                    ?>
-                                        <li><a href="<?php echo base_url().$v['news_url'];?>"><?php echo $v['news_title'];?></a></li>
-                                    <?php 
-                                    }
+                                        foreach($link['menu'] as $v){
+                                        ?>
+                                            <li><a href="<?php echo base_url().$v['news_url'];?>"><?php echo $v['news_title'];?></a></li>
+                                        <?php 
+                                        }
                                     }
                                 ?>
+                                    <li><a href="<?php echo $link['about']; ?>">Tentang Kami</a></li>
+                                    <li><a href="<?php echo $link['privacy'];?>">Kebijakan Privasy</a></li>
+                                    <li><a href="<?php echo $link['term_of_service'];?>">Syarat & Ketentuan</a></li>                                    
+                                    <li><a href="<?php echo $link['login'];?>">Masuk</a></li>
                                 </ul>
                             </div>
                             <div class="widget">
@@ -73,35 +74,25 @@
                                     }
                                     ?>
                                 </ul>
-                            </div>                            
-                            <!-- End .widget -->
+                            </div>               
                         </div>
-                        <!-- End .col-lg-3 -->
-
                         <div class="col-lg-3 col-sm-6">
                             <div class="widget">
                                 <h4 class="widget-title">Produk</h4>
-
-                                <div class="tagcloud">
-                                    <!-- <a href="#">Bag</a> -->
-                                    <?php 
-                                    if(!empty($link['product_category'])){
-                                        foreach($link['product_category'] as $v){
-                                            echo "<a href='".site_url().$link['routing']['product'].'/'.$v['category_url']."'>".$v['category_name']."</a>"; 
-                                        }
-                                    }
-                                    ?>                                    
-                                </div>
-                            </div>
-                            <!-- End .widget -->
+                                <ul class="links">
+                                <?php 
+                                    foreach($link['products'] as $a => $v){ ?>
+                                        <li><a href="<?php echo base_url().$link['routing']['product'].'/'.$v['category_url'].'/'.$v['product_url'];?>"><?php echo $v['product_name'];?></a></li>
+                                        <?php 
+                                    } 
+                                ?>
+                                </ul>
+                            </div>  
                         </div>
-
                         <div class="col-lg-3 col-sm-6">
                             <div class="widget">
                                 <h4 class="widget-title">Blog</h4>
-
                                 <div class="tagcloud">
-                                    <!-- <a href="#">Bag</a> -->
                                     <?php 
                                     if(!empty($link['article_category'])){
                                         foreach($link['article_category'] as $v){
@@ -111,10 +102,7 @@
                                     ?>                                    
                                 </div>
                             </div>
-                            <!-- End .widget -->
-                        </div>                        
-                        <!-- End .col-lg-3 -->
-
+                        </div>
                         <!-- <div class="col-lg-3 col-sm-6">
                             <div class="widget widget-newsletter">
                                 <h4 class="widget-title">Subscribe newsletter</h4>
@@ -129,12 +117,8 @@
                         </div> -->
                         <!-- End .col-lg-3 -->
                     </div>
-                    <!-- End .row -->
                 </div>
-                <!-- End .container -->
             </div>
-            <!-- End .footer-middle -->
-
             <div class="container">
                 <div class="footer-bottom">
                     <div class="container d-sm-flex align-items-center">
@@ -154,7 +138,6 @@
                 </div>
                 <!-- End .footer-bottom -->
             </div>
-            <!-- End .container -->
         </footer>
 
 
